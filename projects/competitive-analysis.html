@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A tool that writes equity-research-grade competitive analysis — Saffron's AI Projects</title>
+  <meta name="description" content="A Claude Code skill that turns a company name into a sourced competitive positioning report.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <script src="../assets/js/gate.js"></script>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="site-title" style="text-decoration:none;">Saffron's AI Projects</a>
+      <span class="status" title="Sage keeps this page's project list up to date as Saffron ships new work.">
+        <span class="status-dot" aria-hidden="true"></span>
+        Sage active
+      </span>
+    </div>
+  </header>
+
+  <main class="container case-study">
+    <a href="../index.html" class="back-link">← Back</a>
+
+    <p class="case-meta">AI project · Claude Code skill</p>
+    <h1>A tool that writes equity-research-grade competitive analysis</h1>
+
+    <p>This is a skill I built for Claude Code — an instruction file that tells it exactly how to do one specific job well, instead of leaving it to however it would approach the question by default.</p>
+
+    <h2>The problem</h2>
+    <p>Competitive positioning work — mapping a company against its peers on cost, technology, pricing power, moat — is something I used to do by hand as an equity analyst. Done properly, it's slow: pull the filings, chase down earnings-call commentary, check review sites for product-quality signals, then write it up in a structure that actually supports a verdict rather than just describing things. Most AI-generated versions of this skip straight to the writing and skip the verdict — smooth paragraphs that never quite commit to an answer.</p>
+
+    <h2>What I built</h2>
+    <p>The skill forces the order of operations I'd insist on from a junior analyst: research before writing, always. It won't let Claude answer from memory — it has to run 15 to 30+ real searches across company filings, earnings calls, peer comparisons, and customer review sites before drafting a single sentence.</p>
+    <p>Then it writes to a fixed structure: industry economics first, company background second, then a company-by-peer verdict — ahead, at parity, or behind — across thirteen specific dimensions (cost position, pricing power, network effects, lock-in, and so on), each one backed by a cited fact, not an adjective. Output is always a formatted Word document, not a chat reply.</p>
+
+    <h2>Seeing it work</h2>
+    <p>I ran it live on Cloudflare against its closest peers — Akamai, Fastly, and AWS CloudFront — to see what it actually produces.</p>
+
+    <div class="callout">
+      <p><strong>Headline finding:</strong> Cloudflare leads on most of the thirteen dimensions — platform breadth, a real data network effect from the traffic passing through it, and rising customer retention. But it's still not GAAP-profitable, and a May 2026 restructuring tied to an AI-first pivot got a rough market reaction the same quarter it posted record revenue. Not a clean win — a real, current tension.</p>
+    </div>
+
+    <p>24 searches, one Word document, thirteen scored dimensions with citations. The full report is below if you want to see the actual output rather than take my word for it.</p>
+
+    <a class="download" href="assets/cloudflare-competitive-analysis.docx" download>
+      Download the full report (.docx)
+    </a>
+
+    <h2>What's next</h2>
+    <p>I want to try pointing it at a full peer set at once instead of one company at a time — same evidence bar, built for scanning a sector rather than a single name.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Saffron's AI Projects</p>
+    </div>
+  </footer>
+
+  <!-- Cloudflare Web Analytics (free, cookieless).
+       Replace YOUR_CLOUDFLARE_TOKEN_HERE with the token from:
+       Cloudflare dashboard -> Web Analytics -> Add a site -> JS snippet -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_CLOUDFLARE_TOKEN_HERE"}'></script>
+</body>
+</html>
